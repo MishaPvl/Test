@@ -1,0 +1,34 @@
+ru:
+  activerecord:
+    models:
+      student:
+        one: Студент
+        other: Студенты
+    attributes:
+      student:
+        first_name: Имя
+        middle_name: Отчество
+        last_name: Фамилия
+        gender: Пол
+        signal: Позывной
+      student/gender:
+        male: Мужчина
+        female: Женщина
+    errors:
+      models:
+        student:
+          attributes:
+            first_name:
+              blank: не может быть пустым
+              too_long: не может быть больше 40 симовлов
+            middle_name:
+              too_long: не может быть больше 60 символов
+            last_name:
+              blank: должна быть заполнена
+              too_long: не может быть больше 40 симоволов
+            gender:
+              blank: должен быть выбран
+            signal:
+              too_short: должен быть длиной от 6 до 16 символов
+              too_long: должен быть длиной от 6 до 16 символов
+              taken: должен быть уникальным. Такой позывной уже существует

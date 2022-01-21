@@ -1,0 +1,22 @@
+<h1>Преподаватель <%= @exam.full_name %></h1>
+
+<p><strong>Фамилия:</strong> <%= @exam.last_name %></p>
+<p><strong>Имя:</strong> <%= @exam.first_name %></p>
+
+<% if @exam.middle_name.present? %>
+  <p><strong>Отчество:</strong> <%= @exam.middle_name %></p>
+<% end %>
+
+<p><strong>Предмет:</strong> <%= Exam.human_attribute_name("subject.#{@exam.subject}") %></p>
+
+<% if @exam.date.present? %>
+  <p><strong>Дата:</strong> <%= @exam.date %></p>
+<% end %>
+
+<p>
+  <%= link_to I18n.t('.edit_button'), edit_exam_path(@exam), class: 'btn btn-success' %>
+  <%= link_to I18n.t('.destroy_button'), exam_path(@exam),
+                method: :delete, class: 'btn btn-danger',
+                data: { confirm: I18n.t('.destroy_confirmation') } %>
+  <%= link_to 'Список экзаменов', exams_path, class: 'btn btn-warning' %>
+</p>

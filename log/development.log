@@ -1,0 +1,987 @@
+  [1m[35m (33.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (147.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateExams (20220121105001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "exams" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "middle_name" varchar, "last_name" varchar, "subject" varchar, "date" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220121105001"]]
+  [1m[36mTRANSACTION (20.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexSubject (20220121110255)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_exams_on_subject" ON "exams" ("subject")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220121110255"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexLastName (20220121110305)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_exams_on_last_name" ON "exams" ("last_name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220121110305"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-21 15:25:29.261346"], ["updated_at", "2022-01-21 15:25:29.261346"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Сергей"], ["middle_name", "Васильевич"], ["last_name", "Кириллов"], ["subject", "История"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Сергей"], ["middle_name", "Васильевич"], ["last_name", "Кириллов"], ["subject", "История"], ["created_at", "2022-01-21 15:32:30.906903"], ["updated_at", "2022-01-21 15:32:30.906903"]]
+  [1m[36mTRANSACTION (95.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.3ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Виктор"], ["middle_name", "Николаевич"], ["last_name", "Осипов"], ["subject", "Физика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.7ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Виктор"], ["middle_name", "Николаевич"], ["last_name", "Осипов"], ["subject", "Физика"], ["created_at", "2022-01-21 15:32:31.015676"], ["updated_at", "2022-01-21 15:32:31.015676"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Дмитрий"], ["middle_name", "Васильевич"], ["last_name", "Скворцов"], ["subject", "Физика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.6ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Дмитрий"], ["middle_name", "Васильевич"], ["last_name", "Скворцов"], ["subject", "Физика"], ["created_at", "2022-01-21 15:32:31.038679"], ["updated_at", "2022-01-21 15:32:31.038679"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Екатерина"], ["middle_name", "Александровна"], ["last_name", "Костикова"], ["subject", "История"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.4ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Екатерина"], ["middle_name", "Александровна"], ["last_name", "Костикова"], ["subject", "История"], ["created_at", "2022-01-21 15:32:31.064226"], ["updated_at", "2022-01-21 15:32:31.064226"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Анфиса"], ["middle_name", "Алексеевна"], ["last_name", "Боярская"], ["subject", "алгебра"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.4ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Анфиса"], ["middle_name", "Алексеевна"], ["last_name", "Боярская"], ["subject", "алгебра"], ["created_at", "2022-01-21 15:32:31.078676"], ["updated_at", "2022-01-21 15:32:31.078676"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Мария"], ["middle_name", "Сергеевна"], ["last_name", "Репина"], ["subject", "Физика"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Мария"], ["middle_name", "Сергеевна"], ["last_name", "Репина"], ["subject", "Физика"], ["created_at", "2022-01-21 15:32:31.091927"], ["updated_at", "2022-01-21 15:32:31.091927"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Мария"], ["middle_name", "Сергеевна"], ["last_name", "Багрова"], ["subject", "История"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Мария"], ["middle_name", "Сергеевна"], ["last_name", "Багрова"], ["subject", "История"], ["created_at", "2022-01-21 15:32:31.103532"], ["updated_at", "2022-01-21 15:32:31.103532"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-01-21 22:33:03 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as HTML
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.2ms | Allocations: 3792)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'students'):
+  
+app/controllers/students_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2022-01-21 22:36:03 +0700
+  
+Zeitwerk::NameError (expected file /home/misha/kurs_ruby/student_crm/app/controllers/students_controller.rb to define constant StudentsController, but didn't):
+  
+zeitwerk (2.4.2) lib/zeitwerk/loader/callbacks.rb:18:in `on_file_autoloaded'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:27:in `block in require'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:26:in `tap'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:26:in `require'
+activesupport (6.1.4) lib/active_support/inflector/methods.rb:274:in `const_get'
+activesupport (6.1.4) lib/active_support/inflector/methods.rb:274:in `constantize'
+activesupport (6.1.4) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.1.4) lib/action_dispatch/http/request.rb:93:in `controller_class_for'
+actionpack (6.1.4) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (6.1.4) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (6.1.4) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (6.1.4) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+webpacker (5.4.0) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.6ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Андрей"], ["middle_name", "Михаилович"], ["last_name", "Малышев"], ["subject", "алгебра"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.7ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Андрей"], ["middle_name", "Михаилович"], ["last_name", "Малышев"], ["subject", "алгебра"], ["created_at", "2022-01-21 15:56:51.880940"], ["updated_at", "2022-01-21 15:56:51.880940"]]
+  [1m[36mTRANSACTION (42.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Владимир"], ["middle_name", "Николаевич"], ["last_name", "Скворцов"], ["subject", "ТРПО"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.4ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Владимир"], ["middle_name", "Николаевич"], ["last_name", "Скворцов"], ["subject", "ТРПО"], ["created_at", "2022-01-21 15:56:51.939923"], ["updated_at", "2022-01-21 15:56:51.939923"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Сергей"], ["middle_name", "Андреевич"], ["last_name", "Онегин"], ["subject", "Математика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (3.9ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Сергей"], ["middle_name", "Андреевич"], ["last_name", "Онегин"], ["subject", "Математика"], ["created_at", "2022-01-21 15:56:51.957687"], ["updated_at", "2022-01-21 15:56:51.957687"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Анна"], ["middle_name", "Алексеевна"], ["last_name", "Мастерова"], ["subject", "Математика"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (6.0ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Анна"], ["middle_name", "Алексеевна"], ["last_name", "Мастерова"], ["subject", "Математика"], ["created_at", "2022-01-21 15:56:51.982266"], ["updated_at", "2022-01-21 15:56:51.982266"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Анфиса"], ["middle_name", "Александровна"], ["last_name", "Боярская"], ["subject", "История"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (3.0ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Анфиса"], ["middle_name", "Александровна"], ["last_name", "Боярская"], ["subject", "История"], ["created_at", "2022-01-21 15:56:52.002915"], ["updated_at", "2022-01-21 15:56:52.002915"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лариса"], ["middle_name", "Алексеевна"], ["last_name", "Мастерова"], ["subject", "Математика"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.4ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Лариса"], ["middle_name", "Алексеевна"], ["last_name", "Мастерова"], ["subject", "Математика"], ["created_at", "2022-01-21 15:56:52.022935"], ["updated_at", "2022-01-21 15:56:52.022935"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Екатерина"], ["middle_name", "Сергеевна"], ["last_name", "Аксенова"], ["subject", "История"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (4.2ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Екатерина"], ["middle_name", "Сергеевна"], ["last_name", "Аксенова"], ["subject", "История"], ["created_at", "2022-01-21 15:56:52.038055"], ["updated_at", "2022-01-21 15:56:52.038055"]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-01-21 22:57:10 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms | Allocations: 3122)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'students'):
+  
+app/controllers/students_controller.rb:7:in `index'
+Started GET "/" for 127.0.0.1 at 2022-01-21 23:01:46 +0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant StudentsController
+Did you mean?  StudentCrm):
+  
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Виктор"], ["middle_name", "Михаилович"], ["last_name", "Осипов"], ["subject", "ТРПО"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Виктор"], ["middle_name", "Михаилович"], ["last_name", "Осипов"], ["subject", "ТРПО"], ["created_at", "2022-01-21 16:02:00.666142"], ["updated_at", "2022-01-21 16:02:00.666142"]]
+  [1m[36mTRANSACTION (54.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Виктор"], ["middle_name", "Олегович"], ["last_name", "Волков"], ["subject", "ТРПО"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Виктор"], ["middle_name", "Олегович"], ["last_name", "Волков"], ["subject", "ТРПО"], ["created_at", "2022-01-21 16:02:00.728813"], ["updated_at", "2022-01-21 16:02:00.728813"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.3ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Михаил"], ["middle_name", "Николаевич"], ["last_name", "Волков"], ["subject", "Математика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.6ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Михаил"], ["middle_name", "Николаевич"], ["last_name", "Волков"], ["subject", "Математика"], ["created_at", "2022-01-21 16:02:00.747292"], ["updated_at", "2022-01-21 16:02:00.747292"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лариса"], ["middle_name", "Олеговна"], ["last_name", "Мастерова"], ["subject", "алгебра"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.4ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Лариса"], ["middle_name", "Олеговна"], ["last_name", "Мастерова"], ["subject", "алгебра"], ["created_at", "2022-01-21 16:02:00.772650"], ["updated_at", "2022-01-21 16:02:00.772650"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лидия"], ["middle_name", "Александровна"], ["last_name", "Мастерова"], ["subject", "История"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.4ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Лидия"], ["middle_name", "Александровна"], ["last_name", "Мастерова"], ["subject", "История"], ["created_at", "2022-01-21 16:02:00.787310"], ["updated_at", "2022-01-21 16:02:00.787310"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Марина"], ["middle_name", "Олеговна"], ["last_name", "Пирогова"], ["subject", "Математика"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Марина"], ["middle_name", "Олеговна"], ["last_name", "Пирогова"], ["subject", "Математика"], ["created_at", "2022-01-21 16:02:00.799810"], ["updated_at", "2022-01-21 16:02:00.799810"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лариса"], ["middle_name", "Александровна"], ["last_name", "Хромова"], ["subject", "Культуроведение"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Лариса"], ["middle_name", "Александровна"], ["last_name", "Хромова"], ["subject", "Культуроведение"], ["created_at", "2022-01-21 16:02:00.811248"], ["updated_at", "2022-01-21 16:02:00.811248"]]
+  [1m[36mTRANSACTION (17.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-01-21 23:05:38 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant StudentsController
+Did you mean?  StudentCrm):
+  
+Started GET "/" for 127.0.0.1 at 2022-01-21 23:08:04 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExamsController#index as HTML
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 2139)
+
+
+  
+NoMethodError (undefined method `ransack' for Exam:Module):
+  
+app/controllers/exams_controller.rb:5:in `index'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Дмитрий"], ["middle_name", "Олегович"], ["last_name", "Онегин"], ["subject", "Культуроведение"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Дмитрий"], ["middle_name", "Олегович"], ["last_name", "Онегин"], ["subject", "Культуроведение"], ["created_at", "2022-01-21 16:09:01.913074"], ["updated_at", "2022-01-21 16:09:01.913074"]]
+  [1m[36mTRANSACTION (27.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Олег"], ["middle_name", "Олегович"], ["last_name", "Волков"], ["subject", "ТРПО"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Олег"], ["middle_name", "Олегович"], ["last_name", "Волков"], ["subject", "ТРПО"], ["created_at", "2022-01-21 16:09:01.947738"], ["updated_at", "2022-01-21 16:09:01.947738"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Дмитрий"], ["middle_name", "Сергеевич"], ["last_name", "Онегин"], ["subject", "Линейная"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Дмитрий"], ["middle_name", "Сергеевич"], ["last_name", "Онегин"], ["subject", "Линейная"], ["created_at", "2022-01-21 16:09:01.959341"], ["updated_at", "2022-01-21 16:09:01.959341"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Марина"], ["middle_name", "Сергеевна"], ["last_name", "Костикова"], ["subject", "ТРПО"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Марина"], ["middle_name", "Сергеевна"], ["last_name", "Костикова"], ["subject", "ТРПО"], ["created_at", "2022-01-21 16:09:01.974436"], ["updated_at", "2022-01-21 16:09:01.974436"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Марина"], ["middle_name", "Олеговна"], ["last_name", "Мастерова"], ["subject", "Культуроведение"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Марина"], ["middle_name", "Олеговна"], ["last_name", "Мастерова"], ["subject", "Культуроведение"], ["created_at", "2022-01-21 16:09:01.986322"], ["updated_at", "2022-01-21 16:09:01.986322"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лариса"], ["middle_name", "Александровна"], ["last_name", "Хромова"], ["subject", "алгебра"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Лариса"], ["middle_name", "Александровна"], ["last_name", "Хромова"], ["subject", "алгебра"], ["created_at", "2022-01-21 16:09:01.997826"], ["updated_at", "2022-01-21 16:09:01.997826"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лидия"], ["middle_name", "Сергеевна"], ["last_name", "Пирогова"], ["subject", "алгебра"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Лидия"], ["middle_name", "Сергеевна"], ["last_name", "Пирогова"], ["subject", "алгебра"], ["created_at", "2022-01-21 16:09:02.009139"], ["updated_at", "2022-01-21 16:09:02.009139"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2022-01-21 23:09:27 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExamsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+Completed 406 Not Acceptable in 22ms (ActiveRecord: 0.6ms | Allocations: 4885)
+
+
+  
+ActionController::MissingExactTemplate (ExamsController#index is missing a template for request formats: text/html):
+  
+actionpack (6.1.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.1.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.1.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.1.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.4) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.4) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.4) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.4) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.4) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+webpacker (5.4.0) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-01-21 23:10:48 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExamsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 16.9ms | Allocations: 4614)
+  Rendered exams/index.html.erb within layouts/application (Duration: 213.0ms | Allocations: 31479)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/misha/kurs_ruby/student_crm/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+[Webpacker] Hash: e2a8a876c5815bee1e21
+Version: webpack 4.46.0
+Time: 5702ms
+Built at: 21.01.2022 23:11:09
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e421b4aa3f716bebdab1.js    125 KiB  application  [emitted] [immutable]  application
+js/application-e421b4aa3f716bebdab1.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e421b4aa3f716bebdab1.js js/application-e421b4aa3f716bebdab1.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered shared/_notification.html.erb (Duration: 0.6ms | Allocations: 194)
+  Rendered layout layouts/application.html.erb (Duration: 21012.6ms | Allocations: 107948)
+Completed 200 OK in 21040ms (Views: 21014.6ms | ActiveRecord: 1.5ms | Allocations: 112472)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-21 23:11:37 +0700
+Processing by ExamsController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 37.5ms | Allocations: 4156)
+  Rendered exams/index.html.erb within layouts/application (Duration: 67.4ms | Allocations: 8109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 91.0ms | Allocations: 14063)
+Completed 200 OK in 103ms (Views: 93.3ms | ActiveRecord: 0.8ms | Allocations: 15138)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-21 23:11:42 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExam Load (0.4ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:44:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/show.html.erb within layouts/application
+  Rendered exams/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 6513)
+Completed 200 OK in 87ms (Views: 45.4ms | ActiveRecord: 0.4ms | Allocations: 9918)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2022-01-21 23:11:51 +0700
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [13 times] (Duration: 16.2ms | Allocations: 3735)
+  Rendered exams/index.html.erb within layouts/application (Duration: 33.9ms | Allocations: 7712)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 73.0ms | Allocations: 13658)
+Completed 200 OK in 78ms (Views: 73.3ms | ActiveRecord: 0.8ms | Allocations: 14729)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Виктор"], ["middle_name", "Денисович"], ["last_name", "Кириллов"], ["subject", "ТРПО"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.4ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Виктор"], ["middle_name", "Денисович"], ["last_name", "Кириллов"], ["subject", "ТРПО"], ["created_at", "2022-01-21 16:14:35.985763"], ["updated_at", "2022-01-21 16:14:35.985763"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Михаил"], ["middle_name", "Николаевич"], ["last_name", "Уваров"], ["subject", "Физика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Михаил"], ["middle_name", "Николаевич"], ["last_name", "Уваров"], ["subject", "Физика"], ["created_at", "2022-01-21 16:14:36.001093"], ["updated_at", "2022-01-21 16:14:36.001093"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Дмитрий"], ["middle_name", "Андреевич"], ["last_name", "Онегин"], ["subject", "Культуроведение"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Дмитрий"], ["middle_name", "Андреевич"], ["last_name", "Онегин"], ["subject", "Культуроведение"], ["created_at", "2022-01-21 16:14:36.013585"], ["updated_at", "2022-01-21 16:14:36.013585"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Екатерина"], ["middle_name", "Алексеевна"], ["last_name", "Костикова"], ["subject", "Математика"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Екатерина"], ["middle_name", "Алексеевна"], ["last_name", "Костикова"], ["subject", "Математика"], ["created_at", "2022-01-21 16:14:36.027813"], ["updated_at", "2022-01-21 16:14:36.027813"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Ольга"], ["middle_name", "Сергеевна"], ["last_name", "Аксенова"], ["subject", "Физика"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Ольга"], ["middle_name", "Сергеевна"], ["last_name", "Аксенова"], ["subject", "Физика"], ["created_at", "2022-01-21 16:14:36.040770"], ["updated_at", "2022-01-21 16:14:36.040770"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Анна"], ["middle_name", "Вячеславовна"], ["last_name", "Хромова"], ["subject", "алгебра"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Анна"], ["middle_name", "Вячеславовна"], ["last_name", "Хромова"], ["subject", "алгебра"], ["created_at", "2022-01-21 16:14:36.051727"], ["updated_at", "2022-01-21 16:14:36.051727"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Мария"], ["middle_name", "Александровна"], ["last_name", "Аксенова"], ["subject", "Культуроведение"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Мария"], ["middle_name", "Александровна"], ["last_name", "Аксенова"], ["subject", "Культуроведение"], ["created_at", "2022-01-21 16:14:36.063293"], ["updated_at", "2022-01-21 16:14:36.063293"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.3ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Виктор"], ["middle_name", "Денисович"], ["last_name", "Глызов"], ["subject", "Математика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.4ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Виктор"], ["middle_name", "Денисович"], ["last_name", "Глызов"], ["subject", "Математика"], ["created_at", "2022-01-21 16:25:09.624771"], ["updated_at", "2022-01-21 16:25:09.624771"]]
+  [1m[36mTRANSACTION (43.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.3ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Олег"], ["middle_name", "Денисович"], ["last_name", "Зайцев"], ["subject", "Линейная"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.7ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Олег"], ["middle_name", "Денисович"], ["last_name", "Зайцев"], ["subject", "Линейная"], ["created_at", "2022-01-21 16:25:09.680507"], ["updated_at", "2022-01-21 16:25:09.680507"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Олег"], ["middle_name", "Олегович"], ["last_name", "Уваров"], ["subject", "Физика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.4ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Олег"], ["middle_name", "Олегович"], ["last_name", "Уваров"], ["subject", "Физика"], ["created_at", "2022-01-21 16:25:09.702717"], ["updated_at", "2022-01-21 16:25:09.702717"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лидия"], ["middle_name", "Олеговна"], ["last_name", "Репина"], ["subject", "Физика"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.6ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Лидия"], ["middle_name", "Олеговна"], ["last_name", "Репина"], ["subject", "Физика"], ["created_at", "2022-01-21 16:25:09.720234"], ["updated_at", "2022-01-21 16:25:09.720234"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Ольга"], ["middle_name", "Александровна"], ["last_name", "Хромова"], ["subject", "История"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Ольга"], ["middle_name", "Александровна"], ["last_name", "Хромова"], ["subject", "История"], ["created_at", "2022-01-21 16:25:09.733957"], ["updated_at", "2022-01-21 16:25:09.733957"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Екатерина"], ["middle_name", "Вячеславовна"], ["last_name", "Репина"], ["subject", "Физика"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Екатерина"], ["middle_name", "Вячеславовна"], ["last_name", "Репина"], ["subject", "Физика"], ["created_at", "2022-01-21 16:25:09.745740"], ["updated_at", "2022-01-21 16:25:09.745740"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Ольга"], ["middle_name", "Александровна"], ["last_name", "Багрова"], ["subject", "ТРПО"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExam Create (0.3ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Ольга"], ["middle_name", "Александровна"], ["last_name", "Багрова"], ["subject", "ТРПО"], ["created_at", "2022-01-21 16:25:09.757319"], ["updated_at", "2022-01-21 16:25:09.757319"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/?page=2" for 127.0.0.1 at 2022-01-21 23:25:13 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 12.4ms | Allocations: 4728)
+  Rendered exams/index.html.erb within layouts/application (Duration: 51.0ms | Allocations: 21789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.7ms | Allocations: 189)
+  Rendered layout layouts/application.html.erb (Duration: 94.0ms | Allocations: 34800)
+Completed 200 OK in 118ms (Views: 96.1ms | ActiveRecord: 1.7ms | Allocations: 39592)
+
+
+Started GET "/?page=2" for 127.0.0.1 at 2022-01-21 23:25:27 +0700
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (1.0ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 13.8ms | Allocations: 4207)
+  Rendered exams/index.html.erb within layouts/application (Duration: 38.4ms | Allocations: 8392)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 54.7ms | Allocations: 14341)
+Completed 200 OK in 61ms (Views: 55.0ms | ActiveRecord: 1.6ms | Allocations: 15409)
+
+
+Started GET "/?page=2&q%5Bs%5D=gender+desc" for 127.0.0.1 at 2022-01-21 23:25:39 +0700
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"s"=>"gender desc"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 20.6ms | Allocations: 4206)
+  Rendered exams/index.html.erb within layouts/application (Duration: 37.4ms | Allocations: 8576)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 64.6ms | Allocations: 14519)
+Completed 200 OK in 73ms (Views: 64.8ms | ActiveRecord: 0.7ms | Allocations: 15664)
+
+
+Started GET "/?page=2&q%5Bs%5D=gender+desc" for 127.0.0.1 at 2022-01-21 23:27:00 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"s"=>"gender desc"}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 15.9ms | Allocations: 4728)
+  Rendered exams/index.html.erb within layouts/application (Duration: 54.4ms | Allocations: 21974)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.6ms | Allocations: 189)
+  Rendered layout layouts/application.html.erb (Duration: 100.2ms | Allocations: 34985)
+Completed 200 OK in 120ms (Views: 101.9ms | ActiveRecord: 1.8ms | Allocations: 39886)
+
+
+Started GET "/?page=2&q%5Bs%5D=gender+asc" for 127.0.0.1 at 2022-01-21 23:27:02 +0700
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"s"=>"gender asc"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 22.8ms | Allocations: 4207)
+  Rendered exams/index.html.erb within layouts/application (Duration: 50.1ms | Allocations: 8588)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 111.9ms | Allocations: 14535)
+Completed 200 OK in 121ms (Views: 116.6ms | ActiveRecord: 0.7ms | Allocations: 15668)
+
+
+Started GET "/?page=2&q%5Bs%5D=gender+desc" for 127.0.0.1 at 2022-01-21 23:27:04 +0700
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"s"=>"gender desc"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 47.2ms | Allocations: 4206)
+  Rendered exams/index.html.erb within layouts/application (Duration: 81.1ms | Allocations: 8581)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 103.7ms | Allocations: 14532)
+Completed 200 OK in 110ms (Views: 106.1ms | ActiveRecord: 0.7ms | Allocations: 15679)
+
+
+Started GET "/?page=2&q%5Bs%5D=signal+desc" for 127.0.0.1 at 2022-01-21 23:27:05 +0700
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"s"=>"signal desc"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 12.1ms | Allocations: 4206)
+  Rendered exams/index.html.erb within layouts/application (Duration: 35.7ms | Allocations: 8573)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.5ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 59.5ms | Allocations: 14523)
+Completed 200 OK in 64ms (Views: 60.6ms | ActiveRecord: 0.7ms | Allocations: 15673)
+
+
+Started GET "/?page=2&q%5Bs%5D=signal+asc" for 127.0.0.1 at 2022-01-21 23:27:06 +0700
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"s"=>"signal asc"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (1.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 14.8ms | Allocations: 4205)
+  Rendered exams/index.html.erb within layouts/application (Duration: 55.6ms | Allocations: 8573)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.3ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 91.1ms | Allocations: 14518)
+Completed 200 OK in 104ms (Views: 90.6ms | ActiveRecord: 2.0ms | Allocations: 15669)
+
+
+Started GET "/?page=2&q%5Bs%5D=gender+desc" for 127.0.0.1 at 2022-01-21 23:28:11 +0700
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"s"=>"gender desc"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 11.5ms | Allocations: 4394)
+  Rendered exams/index.html.erb within layouts/application (Duration: 24.8ms | Allocations: 9398)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.5ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 49.7ms | Allocations: 15846)
+Completed 200 OK in 64ms (Views: 52.2ms | ActiveRecord: 0.6ms | Allocations: 17692)
+
+
+Started GET "/?page=2&q%5Bs%5D=subject+desc" for 127.0.0.1 at 2022-01-21 23:28:13 +0700
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"s"=>"subject desc"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" ORDER BY "exams"."subject" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 30.7ms | Allocations: 4179)
+  Rendered exams/index.html.erb within layouts/application (Duration: 89.0ms | Allocations: 8593)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 118.0ms | Allocations: 14549)
+Completed 200 OK in 129ms (Views: 124.8ms | ActiveRecord: 0.9ms | Allocations: 15698)
+
+
+Started GET "/?page=2&q%5Bs%5D=subject+asc" for 127.0.0.1 at 2022-01-21 23:29:14 +0700
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"s"=>"subject asc"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" ORDER BY "exams"."subject" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 24.5ms | Allocations: 4128)
+  Rendered exams/index.html.erb within layouts/application (Duration: 57.4ms | Allocations: 8521)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 91.7ms | Allocations: 14467)
+Completed 200 OK in 99ms (Views: 92.2ms | ActiveRecord: 0.8ms | Allocations: 15605)
+
+
+Started GET "/?page=2&q%5Bs%5D=subject+desc" for 127.0.0.1 at 2022-01-21 23:29:16 +0700
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"s"=>"subject desc"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" ORDER BY "exams"."subject" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 58.2ms | Allocations: 4176)
+  Rendered exams/index.html.erb within layouts/application (Duration: 110.1ms | Allocations: 8548)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 137.4ms | Allocations: 14497)
+Completed 200 OK in 150ms (Views: 144.0ms | ActiveRecord: 0.7ms | Allocations: 15658)
+
+
+Started GET "/?page=2&q%5Bs%5D=date+desc" for 127.0.0.1 at 2022-01-21 23:29:17 +0700
+Processing by ExamsController#index as HTML
+  Parameters: {"page"=>"2", "q"=>{"s"=>"date desc"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" ORDER BY "exams"."date" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 11.2ms | Allocations: 4206)
+  Rendered exams/index.html.erb within layouts/application (Duration: 25.7ms | Allocations: 8606)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | Allocations: 14555)
+Completed 200 OK in 46ms (Views: 41.3ms | ActiveRecord: 1.0ms | Allocations: 15696)
+
+
+Started GET "/exams/16/edit" for 127.0.0.1 at 2022-01-21 23:41:22 +0700
+Processing by ExamsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/exams_controller.rb:44:in `set_student'
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:44:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/edit.html.erb within layouts/application
+  Rendered exams/_form.html.erb (Duration: 353.8ms | Allocations: 2068)
+  Rendered exams/edit.html.erb within layouts/application (Duration: 354.9ms | Allocations: 2379)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 368.2ms | Allocations: 8266)
+Completed 200 OK in 404ms (Views: 368.9ms | ActiveRecord: 0.6ms | Allocations: 12248)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-21 23:43:27 +0700
+Processing by ExamsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 14.4ms | Allocations: 4159)
+  Rendered exams/index.html.erb within layouts/application (Duration: 36.8ms | Allocations: 8231)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 67.9ms | Allocations: 14184)
+Completed 200 OK in 86ms (Views: 69.0ms | ActiveRecord: 0.9ms | Allocations: 15258)
+
+
+Started GET "/exams/1/edit" for 127.0.0.1 at 2022-01-21 23:43:36 +0700
+Processing by ExamsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:44:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/edit.html.erb within layouts/application
+  Rendered exams/_form.html.erb (Duration: 12.4ms | Allocations: 1263)
+  Rendered exams/edit.html.erb within layouts/application (Duration: 15.1ms | Allocations: 1351)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 53)
+  Rendered layout layouts/application.html.erb (Duration: 47.6ms | Allocations: 7293)
+Completed 200 OK in 55ms (Views: 49.8ms | ActiveRecord: 0.2ms | Allocations: 8225)
+
+
+Started PATCH "/exams/1" for 127.0.0.1 at 2022-01-21 23:43:44 +0700
+Processing by ExamsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "exam"=>{"first_name"=>"Сергей", "middle_name"=>"Васильевич", "last_name"=>"Кириллов", "subject"=>"История", "date"=>"2021-12-20 13:00:00 UTC"}, "commit"=>"Сохранить", "id"=>"1"}
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:44:in `set_student'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/exams_controller.rb:29:in `update'
+  [1m[36mExam Update (0.4ms)[0m  [1m[33mUPDATE "exams" SET "date" = ?, "updated_at" = ? WHERE "exams"."id" = ?[0m  [["date", "2021-12-20 13:00:00"], ["updated_at", "2022-01-21 16:43:44.759575"], ["id", 1]]
+  ↳ app/controllers/exams_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (303.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/exams_controller.rb:29:in `update'
+Redirected to http://127.0.0.1:3000/exams/1
+Completed 302 Found in 340ms (ActiveRecord: 304.3ms | Allocations: 5601)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-21 23:43:45 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:44:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/show.html.erb within layouts/application
+  Rendered exams/show.html.erb within layouts/application (Duration: 10.2ms | Allocations: 612)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 53.0ms | Allocations: 6569)
+Completed 200 OK in 63ms (Views: 58.7ms | ActiveRecord: 0.2ms | Allocations: 7637)
+
+
+Started GET "/exams" for 127.0.0.1 at 2022-01-21 23:43:47 +0700
+Processing by ExamsController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 13.6ms | Allocations: 4171)
+  Rendered exams/index.html.erb within layouts/application (Duration: 31.2ms | Allocations: 8217)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 49.4ms | Allocations: 14164)
+Completed 200 OK in 55ms (Views: 50.0ms | ActiveRecord: 0.8ms | Allocations: 15218)
+
+
+Started GET "/exams" for 127.0.0.1 at 2022-01-21 23:44:01 +0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExamsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 14.4ms | Allocations: 4636)
+  Rendered exams/index.html.erb within layouts/application (Duration: 67.0ms | Allocations: 21563)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.9ms | Allocations: 189)
+  Rendered layout layouts/application.html.erb (Duration: 134.5ms | Allocations: 34579)
+Completed 200 OK in 161ms (Views: 139.2ms | ActiveRecord: 1.7ms | Allocations: 39161)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-21 23:44:07 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExam Load (0.3ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:44:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/show.html.erb within layouts/application
+  Rendered exams/show.html.erb within layouts/application (Duration: 7.3ms | Allocations: 605)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.2ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 6556)
+Completed 200 OK in 41ms (Views: 31.2ms | ActiveRecord: 0.3ms | Allocations: 8028)
+
+

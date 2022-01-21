@@ -1,0 +1,12 @@
+<tr>
+  <th scope="row"><%= link_to exam.full_name, edit_exam_path(exam) %></th>
+  <td><%= Exam.human_attribute_name("subject.#{exam.subject}") %></td>
+  <td><%= exam.date %></td>
+  <td>
+    <%= link_to I18n.t('.details_button'), exam_path(exam), class: 'btn btn-dark btn-sm' %>
+    <%= link_to I18n.t('.edit_button'), edit_exam_path(exam), class: 'btn btn-success btn-sm' %>
+    <%= link_to I18n.t('.destroy_button'), exam_path(exam),
+              method: :delete, class: 'btn btn-danger btn-sm',
+              data: { confirm: I18n.t('.destroy_confirmation') } %>
+  </td>
+</tr>

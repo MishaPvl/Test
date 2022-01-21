@@ -1,0 +1,56 @@
+<h1>Экзамены</h1>
+
+<% if @exams.any? %>
+  <p><%= link_to 'Добавить экзамен', new_exam_path, class: 'btn btn-success' %></p>
+
+  <%= search_form_for @search, url: exams_path do |f| %>
+    <div class="row g-3 align-items-center py-3">
+      <div class="col-auto">
+        <%= f.label :last_name_cont, 'Поиск по фамилии преподавателя:', class: 'col-form-label' %>
+      </div>
+      <div class="col-auto">
+        <%= f.text_field :last_name_cont, class: 'form-control' %>
+      </div>
+      <div class="col-auto">
+        <%= f.submit I18n.t('.search_button'), class: 'btn btn-dark' %> или
+        <%= link_to I18n.t('.show_all_button'), exams_path, class: 'btn btn-warning' %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="py-3">
+  <p>
+    <strong>Сортировать: </strong>
+    <%= sort_link(@search, :last_name, 'по ФИО преподавателя', default_order: :desc) %> |
+    <%= sort_link(@search, :subject, 'по предмету', default_order: :desc) %> |
+    <%= sort_link(@search, :date, 'по дате', default_order: :desc) %>
+  </p>
+  </div>
+
+  <p>Найдено <%= @exams.count %> из <%= @exams_count %></p>
+
+  <table class="table table-bordered border-dark">
+    <thead>
+      <tr class="table-primary border-dark">
+        <th scope="col"><%= sort_link(@search, :last_name, 'ФИО преподавателя', default_order: :desc) %></th>
+        <th scope="col"><%= sort_link(@search, :subject, 'Предмет', default_order: :desc) %></th>
+        <th scope="col"><%= sort_link(@search, :date, 'Дата экзамена', default_order: :desc) %></th>
+        <th scope="col">Управление</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @exams %>
+    </tbody>
+  </table>
+
+  <div class="paginator"><%= will_paginate %></div>
+
+<% elsif params[:q].present? %>
+  <p>Ничего не нашлось. Всего в базе: <%= @exams_count %></p>
+
+  <%= link_to I18n.t('.show_all_button'), exams_path, class: 'btn btn-warning' %>
+<% else %>
+  <p>В списке студентов пусто.</p>
+
+  <p><%= link_to 'Добавить запись', new_exam_path, class: 'btn btn-success' %></p>
+<% end %>
