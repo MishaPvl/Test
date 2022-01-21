@@ -4556,3 +4556,1877 @@ Processing by UsersController#login as HTML
 Completed 200 OK in 17ms (Views: 15.7ms | Allocations: 9880)
 
 
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:18:26 +0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExamsController#index as HTML
+Redirected to http://127.0.0.1:3000/user/login
+Filter chain halted as :require_authentication rendered or redirected
+Completed 302 Found in 27ms (ActiveRecord: 0.0ms | Allocations: 22032)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2022-01-22 04:18:26 +0700
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3224)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/home/ronin/.rvm/rubies/ruby-2.7.2/bin/ruby: warning: shebang line ending with \r may cause problems
+/home/ronin/.rvm/gems/ruby-2.7.2/gems/webpacker-5.4.3/lib/webpacker/runner.rb:13:in ``': No such file or directory - yarn (Errno::ENOENT)
+	from /home/ronin/.rvm/gems/ruby-2.7.2/gems/webpacker-5.4.3/lib/webpacker/runner.rb:13:in `initialize'
+	from /home/ronin/.rvm/gems/ruby-2.7.2/gems/webpacker-5.4.3/lib/webpacker/runner.rb:6:in `new'
+	from /home/ronin/.rvm/gems/ruby-2.7.2/gems/webpacker-5.4.3/lib/webpacker/runner.rb:6:in `run'
+	from ./bin/webpack:17:in `block in <main>'
+	from ./bin/webpack:16:in `chdir'
+	from ./bin/webpack:16:in `<main>'
+
+  Rendered shared/_notification.html.erb (Duration: 0.3ms | Allocations: 193)
+  Rendered layout layouts/application.html.erb (Duration: 3426.8ms | Allocations: 81461)
+Completed 200 OK in 3432ms (Views: 3430.1ms | ActiveRecord: 0.0ms | Allocations: 83859)
+
+
+Started POST "/user/auth" for 127.0.0.1 at 2022-01-22 04:18:34 +0700
+Processing by UsersController#auth as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"321@321", "password"=>"[FILTERED]", "commit"=>"translation missing: ru.form.submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "321@321"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `auth'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 206ms (ActiveRecord: 1.3ms | Allocations: 6219)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:18:34 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 13.6ms | Allocations: 4655)
+  Rendered exams/index.html.erb within layouts/application (Duration: 30.1ms | Allocations: 12979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 19045)
+Completed 200 OK in 48ms (Views: 36.0ms | ActiveRecord: 1.4ms | Allocations: 22994)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-22 04:18:38 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/exams/1"):
+  
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:18:39 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [15 times] (Duration: 12.2ms | Allocations: 4201)
+  Rendered exams/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 8251)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 14433)
+Completed 200 OK in 32ms (Views: 27.3ms | ActiveRecord: 0.9ms | Allocations: 16312)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220121174659)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220121174659"]]
+  [1m[36mTRANSACTION (15.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddIndexLastName (20220121110305)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP INDEX "index_exams_on_last_name"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220121110305"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddIndexSubject (20220121110255)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP INDEX "index_exams_on_subject"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220121110255"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateExams (20220121105001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "exams"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220121105001"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateExams (20220121105001)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "exams" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "middle_name" varchar, "last_name" varchar, "subject" varchar, "date" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220121105001"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexSubject (20220121110255)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_exams_on_subject" ON "exams" ("subject")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220121110255"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexLastName (20220121110305)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_exams_on_last_name" ON "exams" ("last_name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220121110305"]]
+  [1m[36mTRANSACTION (82.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20220121174659)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "name" varchar, "password_digest" varchar, "role" integer DEFAULT 0 NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220121174659"]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Дмитрий"], ["middle_name", "Андреевич"], ["last_name", "Зайцев"], ["subject", "Культуроведение"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Николай"], ["middle_name", "Андреевич"], ["last_name", "Грибов"], ["subject", "ТРПО"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Андрей"], ["middle_name", "Олегович"], ["last_name", "Павлов"], ["subject", "История"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Анфиса"], ["middle_name", "Ульяновна"], ["last_name", "Репина"], ["subject", "История"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Анфиса"], ["middle_name", "Сергеевна"], ["last_name", "Костикова"], ["subject", "Культуроведение"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лариса"], ["middle_name", "Ульяновна"], ["last_name", "Мастерова"], ["subject", "Культуроведение"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Екатерина"], ["middle_name", "Сергеевна"], ["last_name", "Боярская"], ["subject", "Культуроведение"], ["date", 2000], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:19:28 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/user/login
+Filter chain halted as :require_authentication rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 0.3ms | Allocations: 11444)
+
+
+Started GET "/user/login" for 127.0.0.1 at 2022-01-22 04:19:28 +0700
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2795)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.3ms | Allocations: 187)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 15749)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.1ms | Allocations: 18061)
+
+
+Started POST "/user/auth" for 127.0.0.1 at 2022-01-22 04:19:32 +0700
+Processing by UsersController#auth as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"321@321", "password"=>"[FILTERED]", "commit"=>"translation missing: ru.form.submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "321@321"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `auth'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 0.9ms | Allocations: 2044)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 7892)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 9020)
+
+
+Started POST "/user/auth" for 127.0.0.1 at 2022-01-22 04:19:38 +0700
+Processing by UsersController#auth as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"321@321", "password"=>"[FILTERED]", "commit"=>"translation missing: ru.form.submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "321@321"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `auth'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 2037)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 7883)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 8869)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2022-01-22 04:19:50 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/new"):
+  
+Started GET "/users/new" for 127.0.0.1 at 2022-01-22 04:20:39 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.2ms | Allocations: 192)
+  Rendered users/_form.html.erb (Duration: 6.0ms | Allocations: 4611)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 4926)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 10914)
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 14457)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:20:51 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/login"):
+  
+Started GET "/user/login" for 127.0.0.1 at 2022-01-22 04:20:57 +0700
+Processing by UsersController#login as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 0.9ms | Allocations: 2033)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 7982)
+Completed 200 OK in 11ms (Views: 6.1ms | ActiveRecord: 0.4ms | Allocations: 11220)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-01-22 04:21:00 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered users/_form.html.erb (Duration: 1.4ms | Allocations: 1102)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1194)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 7151)
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 10180)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-01-22 04:21:06 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"123@123", "name"=>"123", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register!"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "123@123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "123@123"], ["name", "123"], ["password_digest", "$2a$12$5.xPYW9j.JD06OJgYWbLCu0hnvnY2UyrZZIgde.aHG3gkrkcbeYhS"], ["created_at", "2022-01-21 21:21:06.996165"], ["updated_at", "2022-01-21 21:21:06.996165"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 196ms (ActiveRecord: 4.4ms | Allocations: 3750)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:21:07 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  Rendered exams/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1452)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 7418)
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 0.6ms | Allocations: 10966)
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2022-01-22 04:21:11 +0700
+Processing by ExamsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/new.html.erb within layouts/application
+  Rendered exams/_form.html.erb (Duration: 2.2ms | Allocations: 1975)
+  Rendered exams/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2277)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 8305)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 0.1ms | Allocations: 12378)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:21:12 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  Rendered exams/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 751)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 6727)
+Completed 200 OK in 12ms (Views: 8.1ms | ActiveRecord: 0.3ms | Allocations: 8363)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Михаил"], ["middle_name", "Олегович"], ["last_name", "Зайцев"], ["subject", "ТРПО"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Владимир"], ["middle_name", "Олегович"], ["last_name", "Елизаров"], ["subject", "История"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Владимир"], ["middle_name", "Олегович"], ["last_name", "Елизаров"], ["subject", "Физика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Екатерина"], ["middle_name", "Сергеевна"], ["last_name", "Мастерова"], ["subject", "ТРПО"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Марина"], ["middle_name", "Александровна"], ["last_name", "Багрова"], ["subject", "История"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лариса"], ["middle_name", "Александровна"], ["last_name", "Мастерова"], ["subject", "ТРПО"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Анна"], ["middle_name", "Вячеславовна"], ["last_name", "Репина"], ["subject", "История"], ["date", 2000], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220121174659)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220121174659"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddIndexLastName (20220121110305)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP INDEX "index_exams_on_last_name"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220121110305"]]
+  [1m[36mTRANSACTION (16.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddIndexSubject (20220121110255)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP INDEX "index_exams_on_subject"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220121110255"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateExams (20220121105001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "exams"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20220121105001"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateExams (20220121105001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "exams" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "middle_name" varchar, "last_name" varchar, "subject" varchar, "date" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220121105001"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexSubject (20220121110255)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_exams_on_subject" ON "exams" ("subject")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220121110255"]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddIndexLastName (20220121110305)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_exams_on_last_name" ON "exams" ("last_name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220121110305"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20220121174659)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "name" varchar, "password_digest" varchar, "role" integer DEFAULT 0 NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220121174659"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Дмитрий"], ["middle_name", "Николаевич"], ["last_name", "Скворцов"], ["subject", "Математика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Дмитрий"], ["middle_name", "Николаевич"], ["last_name", "Скворцов"], ["subject", "Сети"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Василий"], ["middle_name", "Сергеевич"], ["last_name", "Грибов"], ["subject", "Культуроведение"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Марина"], ["middle_name", "Ульяновна"], ["last_name", "Боярская"], ["subject", "ТРПО"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лариса"], ["middle_name", "Вячеславовна"], ["last_name", "Мастерова"], ["subject", "История"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Анна"], ["middle_name", "Александровна"], ["last_name", "Репина"], ["subject", "Сети"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Марина"], ["middle_name", "Вячеславовна"], ["last_name", "Костикова"], ["subject", "История"], ["date", 2000], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Олег"], ["middle_name", "Андреевич"], ["last_name", "Лебедев"], ["subject", "Культуроведение"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Дмитрий"], ["middle_name", "Сергеевич"], ["last_name", "Лебедев"], ["subject", "Сети"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Владимир"], ["middle_name", "Андреевич"], ["last_name", "Лебедев"], ["subject", "Культуроведение"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Марина"], ["middle_name", "Вячеславовна"], ["last_name", "Пирогова"], ["subject", "Культуроведение"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Анна"], ["middle_name", "Александровна"], ["last_name", "Репина"], ["subject", "Сети"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Екатерина"], ["middle_name", "Сергеевна"], ["last_name", "Хромова"], ["subject", "ТРПО"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Анфиса"], ["middle_name", "Ульяновна"], ["last_name", "Аксенова"], ["subject", "История"], ["date", 2000], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Николай"], ["middle_name", "Сергеевич"], ["last_name", "Грибов"], ["subject", "Физика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Михаил"], ["middle_name", "Сергеевич"], ["last_name", "Зайцев"], ["subject", "Физика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Михаил"], ["middle_name", "Олегович"], ["last_name", "Осипов"], ["subject", "Математика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Мария"], ["middle_name", "Алексеевна"], ["last_name", "Багрова"], ["subject", "ТРПО"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Валерия"], ["middle_name", "Александровна"], ["last_name", "Аксенова"], ["subject", "Сети"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Анфиса"], ["middle_name", "Александровна"], ["last_name", "Багрова"], ["subject", "Сети"], ["date", 2000], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Марина"], ["middle_name", "Сергеевна"], ["last_name", "Репина"], ["subject", "Математика"], ["date", 2000], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:23:31 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Filter chain halted as :require_authentication rendered or redirected
+Completed 302 Found in 22ms (ActiveRecord: 1.0ms | Allocations: 11443)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:23:31 +0700
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2795)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.3ms | Allocations: 187)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 15749)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.1ms | Allocations: 18060)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-01-22 04:23:37 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.3ms | Allocations: 193)
+  Rendered users/_form.html.erb (Duration: 2.8ms | Allocations: 1998)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2312)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 8276)
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 11719)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-01-22 04:23:43 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"123@123", "name"=>"123", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register!"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "123@123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "123@123"], ["name", "123"], ["password_digest", "$2a$12$oTNzYlGoG3TtIgbmG6Y7seZ5RHw4nzXN0BgWFA5VGvykeenxwJoBa"], ["created_at", "2022-01-21 21:23:43.281834"], ["updated_at", "2022-01-21 21:23:43.281834"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 196ms (ActiveRecord: 4.5ms | Allocations: 3736)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:23:43 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  Rendered exams/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1452)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 7419)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.6ms | Allocations: 10879)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Андрей"], ["middle_name", "Сергеевич"], ["last_name", "Лебедев"], ["subject", "Физика"], ["date", 2017], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Олег"], ["middle_name", "Васильевич"], ["last_name", "Волков"], ["subject", "Математика"], ["date", 2017], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Николай"], ["middle_name", "Николаевич"], ["last_name", "Волков"], ["subject", "ТРПО"], ["date", 2017], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Марина"], ["middle_name", "Вячеславовна"], ["last_name", "Мастерова"], ["subject", "Математика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лидия"], ["middle_name", "Ульяновна"], ["last_name", "Пирогова"], ["subject", "Физика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лидия"], ["middle_name", "Алексеевна"], ["last_name", "Багрова"], ["subject", "История"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Ольга"], ["middle_name", "Вячеславовна"], ["last_name", "Пирогова"], ["subject", "Сети"], ["date", 1999], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:27:26 +0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  Rendered exams/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1589)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.3ms | Allocations: 190)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 14648)
+Completed 200 OK in 43ms (Views: 17.7ms | ActiveRecord: 1.0ms | Allocations: 24840)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:27:29 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  Rendered exams/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 755)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 6720)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 8370)
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2022-01-22 04:27:37 +0700
+Processing by ExamsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/new.html.erb within layouts/application
+  Rendered exams/_form.html.erb (Duration: 6.5ms | Allocations: 9955)
+  Rendered exams/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 10262)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 16225)
+Completed 200 OK in 17ms (Views: 12.7ms | ActiveRecord: 0.1ms | Allocations: 20330)
+
+
+Started POST "/exams" for 127.0.0.1 at 2022-01-22 04:27:45 +0700
+Processing by ExamsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "exam"=>{"first_name"=>"`123", "middle_name"=>"123", "last_name"=>"123", "subject"=>"123", "date"=>"123"}, "commit"=>"Сохранить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/exams_controller.rb:24:in `create'
+  [1m[36mExam Create (0.2ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "`123"], ["middle_name", "123"], ["last_name", "123"], ["subject", "123"], ["date", "2022-01-21 00:00:00"], ["created_at", "2022-01-21 21:27:45.406083"], ["updated_at", "2022-01-21 21:27:45.406083"]]
+  ↳ app/controllers/exams_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/exams_controller.rb:24:in `create'
+Redirected to http://127.0.0.1:3000/exams/1
+Completed 302 Found in 12ms (ActiveRecord: 5.8ms | Allocations: 3600)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-22 04:27:45 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/exams/1"):
+  
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-22 04:28:28 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/exams/new
+Completed 302 Found in 20ms (ActiveRecord: 1.2ms | Allocations: 10824)
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2022-01-22 04:28:28 +0700
+Processing by ExamsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/new.html.erb within layouts/application
+  Rendered exams/_form.html.erb (Duration: 1.7ms | Allocations: 1404)
+  Rendered exams/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1493)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 7656)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 8830)
+
+
+Started POST "/exams" for 127.0.0.1 at 2022-01-22 04:28:33 +0700
+Processing by ExamsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "exam"=>{"first_name"=>"123", "middle_name"=>"123", "last_name"=>"123", "subject"=>"123", "date"=>"123"}, "commit"=>"Сохранить"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/exams_controller.rb:24:in `create'
+  [1m[36mExam Create (0.2ms)[0m  [1m[32mINSERT INTO "exams" ("first_name", "middle_name", "last_name", "subject", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "123"], ["middle_name", "123"], ["last_name", "123"], ["subject", "123"], ["date", "2022-01-21 00:00:00"], ["created_at", "2022-01-21 21:28:33.778718"], ["updated_at", "2022-01-21 21:28:33.778718"]]
+  ↳ app/controllers/exams_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/exams_controller.rb:24:in `create'
+Redirected to http://127.0.0.1:3000/exams/2
+Completed 302 Found in 11ms (ActiveRecord: 4.8ms | Allocations: 3458)
+
+
+Started GET "/exams/2" for 127.0.0.1 at 2022-01-22 04:28:33 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/exams/new
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1673)
+
+
+Started GET "/exams/new" for 127.0.0.1 at 2022-01-22 04:28:33 +0700
+Processing by ExamsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/new.html.erb within layouts/application
+  Rendered exams/_form.html.erb (Duration: 2.3ms | Allocations: 1309)
+  Rendered exams/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1398)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 7357)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 8343)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:35 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 1.4ms | Allocations: 819)
+  Rendered exams/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 4902)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 10867)
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 0.5ms | Allocations: 12543)
+
+
+Started GET "/exams/2" for 127.0.0.1 at 2022-01-22 04:28:43 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1670)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:43 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.8ms | Allocations: 537)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 3962)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 9921)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.3ms | Allocations: 11569)
+
+
+Started GET "/exams/2" for 127.0.0.1 at 2022-01-22 04:28:45 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:45 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.9ms | Allocations: 537)
+  Rendered exams/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3951)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 9979)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.3ms | Allocations: 11625)
+
+
+Started GET "/exams/2" for 127.0.0.1 at 2022-01-22 04:28:46 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1670)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:46 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.7ms | Allocations: 537)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3949)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 9923)
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 0.4ms | Allocations: 11573)
+
+
+Started GET "/exams/2" for 127.0.0.1 at 2022-01-22 04:28:46 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:46 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.7ms | Allocations: 538)
+  Rendered exams/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3954)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 10002)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 11656)
+
+
+Started GET "/exams/2" for 127.0.0.1 at 2022-01-22 04:28:47 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1670)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:47 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.8ms | Allocations: 537)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3951)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 9989)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.3ms | Allocations: 11641)
+
+
+Started GET "/exams/2" for 127.0.0.1 at 2022-01-22 04:28:48 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:48 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.7ms | Allocations: 537)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 3949)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 9908)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.4ms | Allocations: 11554)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-22 04:28:49 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:49 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.7ms | Allocations: 538)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 9909)
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 0.4ms | Allocations: 11556)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-22 04:28:49 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:49 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.7ms | Allocations: 537)
+  Rendered exams/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3949)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 9908)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 11556)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-22 04:28:50 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:50 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.8ms | Allocations: 537)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 3949)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 9978)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.3ms | Allocations: 11624)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-22 04:28:50 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:50 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.8ms | Allocations: 538)
+  Rendered exams/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 3952)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 10000)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.4ms | Allocations: 11653)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-22 04:28:50 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:50 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.8ms | Allocations: 538)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 10005)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.3ms | Allocations: 11657)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-22 04:28:51 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 1669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:51 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.7ms | Allocations: 537)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3949)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 9987)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.3ms | Allocations: 11637)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-22 04:28:51 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:28:51 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.8ms | Allocations: 537)
+  Rendered exams/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 3949)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 9908)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.3ms | Allocations: 11554)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Василий"], ["middle_name", "Михаилович"], ["last_name", "Павлов"], ["subject", "Сети"], ["date", 2018], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Михаил"], ["middle_name", "Сергеевич"], ["last_name", "Скворцов"], ["subject", "История"], ["date", 2018], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Николай"], ["middle_name", "Олегович"], ["last_name", "Зайцев"], ["subject", "История"], ["date", 2018], ["LIMIT", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лидия"], ["middle_name", "Александровна"], ["last_name", "Аксенова"], ["subject", "История"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Анфиса"], ["middle_name", "Вячеславовна"], ["last_name", "Костикова"], ["subject", "Математика"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лариса"], ["middle_name", "Вячеславовна"], ["last_name", "Боярская"], ["subject", "Культуроведение"], ["date", 1999], ["LIMIT", 1]]
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."first_name" = ? AND "exams"."middle_name" = ? AND "exams"."last_name" = ? AND "exams"."subject" = ? AND "exams"."date" = ? LIMIT ?[0m  [["first_name", "Лидия"], ["middle_name", "Алексеевна"], ["last_name", "Костикова"], ["subject", "ТРПО"], ["date", 1999], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:30:21 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.7ms | Allocations: 538)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3951)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 9910)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 11540)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:30:23 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.8ms | Allocations: 537)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 9909)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 11539)
+
+
+Started DELETE "/exams/1" for 127.0.0.1 at 2022-01-22 04:30:29 +0700
+Processing by ExamsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1712)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:30:29 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.8ms | Allocations: 538)
+  Rendered exams/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 9993)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.4ms | Allocations: 11630)
+
+
+Started DELETE "/exams/2" for 127.0.0.1 at 2022-01-22 04:30:32 +0700
+Processing by ExamsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1712)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:30:32 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.7ms | Allocations: 538)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3955)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 9998)
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 0.5ms | Allocations: 11640)
+
+
+Started GET "/exams/1/edit" for 127.0.0.1 at 2022-01-22 04:30:34 +0700
+Processing by ExamsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:30:34 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.7ms | Allocations: 538)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 9993)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 11645)
+
+
+Started GET "/exams/2/edit" for 127.0.0.1 at 2022-01-22 04:30:35 +0700
+Processing by ExamsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1669)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:30:35 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.0ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.7ms | Allocations: 537)
+  Rendered exams/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 3949)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 9987)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 11633)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:34:20 +0700
+Processing by ExamsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.8ms | Allocations: 547)
+  Rendered exams/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 7366)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 13310)
+Completed 200 OK in 31ms (Views: 18.6ms | ActiveRecord: 1.5ms | Allocations: 21006)
+
+
+Started GET "/exams/1/edit" for 127.0.0.1 at 2022-01-22 04:34:40 +0700
+Processing by ExamsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1783)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:34:40 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.8ms | Allocations: 538)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 3952)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 9995)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 11644)
+
+
+Started GET "/exams/1" for 127.0.0.1 at 2022-01-22 04:34:41 +0700
+Processing by ExamsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/show.html.erb within layouts/application
+  Rendered exams/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 6641)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 8279)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by ExamsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms | Allocations: 6095)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 830)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1161)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 784)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1161)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 784)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1161)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 784)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1161)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 784)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1161)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 785)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1161)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 784)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1161)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 784)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1161)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 784)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1161)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by UsersController#login as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 784)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:41:10 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 1161)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:42:26 +0700
+Processing by ExamsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms | Allocations: 6493)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:42:26 +0700
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.6ms | Allocations: 2427)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 8376)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 9260)
+
+
+Started POST "/users/auth" for 127.0.0.1 at 2022-01-22 04:42:32 +0700
+Processing by UsersController#auth as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"123@123", "password"=>"[FILTERED]", "commit"=>"translation missing: ru.form.submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "123@123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `auth'
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 0.2ms | Allocations: 2281)
+
+
+  
+NoMethodError (undefined method `id' for 1:Integer
+Did you mean?  i):
+  
+app/controllers/concerns/authentication.rb:33:in `sign_in'
+app/controllers/users_controller.rb:36:in `set_user_session'
+app/controllers/users_controller.rb:25:in `auth'
+Started POST "/users/auth" for 127.0.0.1 at 2022-01-22 04:43:03 +0700
+Processing by UsersController#auth as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"123@123", "password"=>"[FILTERED]", "commit"=>"translation missing: ru.form.submit"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:23:in `auth'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "123@123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `auth'
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 0.6ms | Allocations: 6774)
+
+
+  
+NoMethodError (undefined method `id' for 1:Integer
+Did you mean?  i):
+  
+app/controllers/concerns/authentication.rb:33:in `sign_in'
+app/controllers/users_controller.rb:36:in `set_user_session'
+app/controllers/users_controller.rb:25:in `auth'
+Started POST "/users/auth" for 127.0.0.1 at 2022-01-22 04:43:26 +0700
+Processing by UsersController#auth as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"123@123", "password"=>"[FILTERED]", "commit"=>"translation missing: ru.form.submit"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:23:in `auth'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "123@123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `auth'
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 0.7ms | Allocations: 6776)
+
+
+  
+NoMethodError (undefined method `id' for 1:Integer
+Did you mean?  i):
+  
+app/controllers/concerns/authentication.rb:33:in `sign_in'
+app/controllers/users_controller.rb:36:in `set_user_session'
+app/controllers/users_controller.rb:25:in `auth'
+Started POST "/users/auth" for 127.0.0.1 at 2022-01-22 04:43:45 +0700
+Processing by UsersController#auth as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"123@123", "password"=>"[FILTERED]", "commit"=>"translation missing: ru.form.submit"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:23:in `auth'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "123@123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `auth'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 193ms (ActiveRecord: 0.6ms | Allocations: 5496)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:43:45 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/login
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 1927)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:43:45 +0700
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.1ms | Allocations: 2063)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 8012)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 8512)
+
+
+Started GET "/users/NEW" for 127.0.0.1 at 2022-01-22 04:43:54 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/NEW"):
+  
+Started GET "/users/new" for 127.0.0.1 at 2022-01-22 04:44:01 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.3ms | Allocations: 191)
+  Rendered users/_form.html.erb (Duration: 2.3ms | Allocations: 1859)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2167)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 8213)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 8725)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-01-22 04:44:08 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"321@321", "name"=>"123", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register!"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "321@321"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "321@321"], ["name", "123"], ["password_digest", "$2a$12$YKiC9/bTttyN2WZPiZk2A.2w/fb290i1/uyoAtxXsQBo3YD5lvYn."], ["created_at", "2022-01-21 21:44:09.004203"], ["updated_at", "2022-01-21 21:44:09.004203"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 196ms (ActiveRecord: 5.2ms | Allocations: 3555)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:44:09 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/new
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 1136)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-01-22 04:44:09 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered users/_form.html.erb (Duration: 1.5ms | Allocations: 1045)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1137)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 7094)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 7495)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:44:14 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/users/new
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1133)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-01-22 04:44:14 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.0ms | Allocations: 42)
+  Rendered users/_form.html.erb (Duration: 1.5ms | Allocations: 1044)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 7098)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 7508)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-01-22 04:46:00 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"123@1234", "name"=>"123", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register!"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "123@1234"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "password_digest", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "123@1234"], ["name", "123"], ["password_digest", "$2a$12$/PjgVmpobR9.M8/YcR6N6uY.ewGBeS36izXiY/YYKrgWRFrTfaOmy"], ["role", 1], ["created_at", "2022-01-21 21:46:00.417786"], ["updated_at", "2022-01-21 21:46:00.417786"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (45.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "123@1234"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 268ms (ActiveRecord: 46.8ms | Allocations: 11903)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:46:00 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 1.2ms | Allocations: 836)
+  Rendered exams/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 16585)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.3ms | Allocations: 187)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 29631)
+Completed 200 OK in 37ms (Views: 29.9ms | ActiveRecord: 0.8ms | Allocations: 34750)
+
+
+Started GET "/exams/1/edit" for 127.0.0.1 at 2022-01-22 04:46:09 +0700
+Processing by ExamsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exams_controller.rb:47:in `set_student'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1838)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 04:46:09 +0700
+Processing by ExamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "exams"[0m
+  ↳ app/controllers/exams_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering exams/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:3
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "exams"."id") FROM "exams"[0m
+  ↳ app/views/exams/index.html.erb:30
+  [1m[36mExam Load (0.1ms)[0m  [1m[34mSELECT DISTINCT "exams".* FROM "exams" LIMIT ? OFFSET ?[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/views/exams/index.html.erb:42
+  Rendered collection of exams/_exam.html.erb [2 times] (Duration: 0.7ms | Allocations: 539)
+  Rendered exams/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3968)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 9933)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 11588)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-01-22 04:46:20 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.3ms | Allocations: 192)
+  Rendered users/_form.html.erb (Duration: 6.5ms | Allocations: 4526)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 4843)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 10710)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 11610)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:46:28 +0700
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.2ms | Allocations: 2344)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 8209)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 8711)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-01-22 04:46:44 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.0ms | Allocations: 42)
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 1047)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1139)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 54)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 7098)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 7500)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2022-01-22 04:46:47 +0700
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 0.9ms | Allocations: 2054)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_notification.html.erb (Duration: 0.1ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 7920)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 8300)
+
+

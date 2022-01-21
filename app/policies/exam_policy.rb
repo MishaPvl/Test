@@ -3,10 +3,18 @@
 class ExamPolicy < ApplicationPolicy
 
   def index?
-    true
+    user.viewer_role?
   end
 
   def create?
-    true
+    user.admin_role?
+  end
+
+  def destroy?
+    user.admin_role?
+  end
+
+  def update?
+    user.admin_role?
   end
 end

@@ -20,7 +20,7 @@ end
                          middle_name: male_middle_names,
                          last_name: male_last_names,
                          subject: random_subject,
-                         date: 2021-21-01)
+                         date: 2022-3-01)
 end
 
 def female_first_names
@@ -42,7 +42,7 @@ end
                          middle_name: female_middle_names,
                          last_name: female_last_names,
                          subject: random_subject,
-                         date: 2022-01-21)
+                         date: 2022-02-21)
 end
 
 puts 'Seeds OK!'

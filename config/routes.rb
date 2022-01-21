@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   root 'exams#index'
 
-  resources :exams, only: %i[index new edit create update destroy]
+  resources :exams
   resource :session, only: %i[new create destroy]
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create login]
 
-  get 'user/login' => 'users#login', :as => :login_user
-  post 'user/auth' => 'users#auth', :as => :auth_user
+  get 'users/login' => 'users#login', :as => :login_user
+  post 'users/auth' => 'users#auth', :as => :auth_user
 end

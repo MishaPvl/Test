@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
+    @user.viewer_role!
     if @user.save
       set_user_session
       flash[:success] = "Welcome to the app, #{@user.name}!"
@@ -17,9 +18,6 @@ class UsersController < ApplicationController
   end
 
   def login
-    if user_signed_in?
-      redirect_to root_path
-    end
   end
 
   def auth
@@ -36,7 +34,7 @@ class UsersController < ApplicationController
   private
 
   def set_user_session
-    session[:user_id] = @user.id
+    sign_in @user
   end
 
   def user_params
