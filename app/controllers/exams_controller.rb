@@ -1,5 +1,8 @@
 class ExamsController < ApplicationController
+  before_action :require_authentication
   before_action :set_student, only: %i[show edit update destroy]
+  before_action :authorize_exam!
+  after_action :verify_authorized
 
   def index
     @search = Exam.ransack(params[:q])
@@ -46,5 +49,10 @@ class ExamsController < ApplicationController
 
   def exam_params
     params.require(:exam).permit(:first_name, :middle_name, :last_name, :subject, :date)
+  end
+
+
+  def authorize_exam!
+    authorize(Exam)
   end
 end
