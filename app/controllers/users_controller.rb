@@ -31,6 +31,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def logout
+    sign_out
+    redirect_to root_path
+  end
+
   private
 
   def set_user_session

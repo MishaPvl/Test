@@ -7,6 +7,7 @@ ru:
   destroy_confirmation: Точно удалить?
   search_button: Найти
   show_all_button: Показать всё
+  show_name: Вы вошли как
   will_paginate:
     previous_label: Предыдущая
     next_label: Следующая
