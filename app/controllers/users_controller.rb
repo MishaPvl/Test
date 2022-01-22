@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-    @user.viewer_role!
+    @user.role = 1
     if @user.save
       set_user_session
       flash[:success] = "Welcome to the app, #{@user.name}!"

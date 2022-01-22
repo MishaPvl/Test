@@ -31,3 +31,12 @@ ru:
             date:
               invalid_date: должна быть формата YYYY-MM-DD
               on_or_after: не может быть назначена на предыдущее число
+        user:
+          attributes:
+            email:
+              taken: уже занят
+              blank: отсутствует
+            name:
+              blank: отсутствует
+            password:
+              blank: отсутствует

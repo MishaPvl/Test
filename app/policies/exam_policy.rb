@@ -3,7 +3,7 @@
 class ExamPolicy < ApplicationPolicy
 
   def index?
-    user.viewer_role?
+    user.viewer_role? || user.admin_role?
   end
 
   def create?
