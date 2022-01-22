@@ -1,13 +1,11 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+user_one:
+  email: Email@mail.ru
+  name: Ivan
+  password_digest: qwerty
+  role: 2
 
-one:
-  email: MyString
-  name: MyString
-  password_digest: MyString
-  role: 
-
-two:
-  email: MyString
-  name: MyString
-  password_digest: MyString
-  role: 
+user_two:
+  email: MyString@mail.ru
+  name: Neivan
+  password_digest: secretPassword
+  role: 1

@@ -1,0 +1,27 @@
+professor_one:
+  first_name: Василий
+  middle_name: Новиков
+  last_name: Петрович
+  subject: История
+  date: 2022-01-13
+
+professor_two:
+  first_name: Иоанна
+  middle_name: Игорькова
+  last_name: Николаевна
+  subject: Математика
+  date: 2022-01-27
+
+professor_three:
+  first_name: Петров
+  middle_name: Михалков
+  last_name: Михаилович
+  subject: География
+  date: 2022-01-16
+
+professor_four:
+  first_name: Иван
+  middle_name: Резван
+  last_name: Иванович
+  subject: Философия
+  date: 2022-01-24
